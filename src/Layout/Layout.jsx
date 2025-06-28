@@ -1,11 +1,20 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import Header from './Header'
+import Container from './Container'
 
 function Layout() {
     return (
         <div>
-            Sidebar
+            <div className="flex w-screen justify-between">
+                <div className='w-1/8 primary-bg-color h-screen'>
+                    <Sidebar />
+                </div>
+                <div className='w-7/8 primary-bg-color'>
+                    <Header />
+                    <Container />
+                </div>
+            </div>
         </div>
     )
 }
