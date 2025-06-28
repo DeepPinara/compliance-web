@@ -12,6 +12,7 @@ function Sidebar() {
 
     const tracker = [
         { icon: "/Icons/ic_company.svg", label: "Tracker", to: '/create-new-application-tracker' },
+        { icon: "/Icons/ic_docs.svg", label: "Doc For Validate", to: '/doc-for-validate' },
     ];
 
     const compliance = [
