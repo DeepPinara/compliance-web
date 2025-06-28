@@ -4,7 +4,7 @@ function Header() {
     const [showUserMenu, setShowUserMenu] = useState(false);
 
     return (
-        <header className='shadow-sm border-b border-gray-200 px-4 py-3 lg:px-6 lg:py-4'>
+        <header className='shadow-sm h-1/10 border-b border-gray-200 px-4 py-3 lg:px-6 lg:py-4'>
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 {/* Title Section */}
                 <div className="flex-1 min-w-0">

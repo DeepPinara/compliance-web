@@ -1,33 +1,36 @@
 import React, { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom';
 
 function Sidebar() {
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const location = useLocation();
 
     const platformNavigator = [
-        { icon: "/Icons/ic_dashboard.svg", label: "Dashboard", active: true },
-        { icon: "/Icons/ic_company.svg", label: "Principle Entity", active: false },
+        { icon: "/Icons/ic_dashboard.svg", label: "Dashboard", to: "/" },
+        { icon: "/Icons/ic_company.svg", label: "Principle Entity", to: "/principle-entity" },
     ];
 
     const tracker = [
-        { icon: "/Icons/ic_company.svg", label: "Tracker", active: false },
+        { icon: "/Icons/ic_company.svg", label: "Tracker", to: '/create-new-application-tracker' },
     ];
 
     const compliance = [
-        { icon: "/Icons/ic_company.svg", label: "Contractor's", active: false },
-        { icon: "/Icons/ic_company.svg", label: "Worker's", active: false },
-        { icon: "/Icons/ic_company.svg", label: "Wage Master", active: false },
-        { icon: "/Icons/ic_company.svg", label: "Compliance Create", active: false },
-        { icon: "/Icons/ic_team.svg", label: "Team Management", active: false },
-        { icon: "/Icons/ic_wage_master.svg", label: "Minimum Wage Master", active: false },
-
+        { icon: "/Icons/ic_company.svg", label: "Contractor's", to: "/contractors" },
+        { icon: "/Icons/ic_company.svg", label: "Worker's", to: "/workers" },
+        { icon: "/Icons/ic_company.svg", label: "Wage Master", to: "/wage-master" },
+        { icon: "/Icons/ic_company.svg", label: "Compliance Create", to: "/compliance-create" },
+        { icon: "/Icons/ic_team.svg", label: "Team Management", to: "/team-management" },
+        { icon: "/Icons/ic_wage_master.svg", label: "Minimum Wage Master", to: "/minimum-wage-master" },
     ];
+
+    const isActive = (to) => location.pathname === to;
 
     return (
         <div className={`
             shadow-lg transition-all duration-300 ease-in-out
-            ${isCollapsed ? 'w-16' : 'w-64'} 
             h-screen flex flex-col
             border-r-2 border-gray-200
+            ${isCollapsed ? 'w-16' : 'w-64'}
         `}>
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b-2 border-gray-200">
@@ -36,14 +39,10 @@ function Sidebar() {
                 )}
                 <button
                     onClick={() => setIsCollapsed(!isCollapsed)}
-                    className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                    className="p-2 rounded hover:bg-gray-100 transition-colors"
+                    aria-label="Toggle sidebar"
                 >
-                    <svg
-                        className={`w-5 h-5 text-gray-600 transition-transform duration-200 ${isCollapsed ? 'rotate-180' : ''}`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
+                    <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
                 </button>
@@ -62,12 +61,12 @@ function Sidebar() {
                         <ul className="space-y-1">
                             {platformNavigator.map((item, index) => (
                                 <li key={index}>
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to={item.to}
                                         className={`
                                             flex items-center px-3 py-2.5 rounded-lg transition-all duration-200 w-full
-                                            ${item.active
-                                                ? 'bg-blue-50 text-blue-700'
+                                            ${isActive(item.to)
+                                                ? 'bg-blue-200 text-blue-700'
                                                 : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
                                             }
                                             group
@@ -76,13 +75,12 @@ function Sidebar() {
                                         <img
                                             src={item.icon}
                                             alt=""
-                                            className={`w-5 h-5 mr-3 transition-all duration-200 ${item.active ? 'filter brightness-0 saturate-100 invert-27 sepia-51 saturate-2878 hue-rotate-202 brightness-104 contrast-97' : ''
-                                                }`}
+                                            className={`w-5 h-5 mr-3 transition-all duration-200 ${isActive(item.to) ? 'filter brightness-0 saturate-100 invert-27 sepia-51 saturate-2878 hue-rotate-202 brightness-104 contrast-97' : ''}`}
                                         />
                                         {!isCollapsed && (
                                             <span className="font-medium">{item.label}</span>
                                         )}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -98,12 +96,12 @@ function Sidebar() {
                         <ul className="space-y-1">
                             {tracker.map((item, index) => (
                                 <li key={index}>
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to={item.to}
                                         className={`
                                             flex items-center px-3 py-2.5 rounded-lg transition-all duration-200 w-full
-                                            ${item.active
-                                                ? 'bg-blue-50 text-blue-700'
+                                            ${isActive(item.to)
+                                                ? 'bg-blue-200 text-blue-700'
                                                 : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
                                             }
                                             group
@@ -112,13 +110,12 @@ function Sidebar() {
                                         <img
                                             src={item.icon}
                                             alt=""
-                                            className={`w-5 h-5 mr-3 transition-all duration-200 ${item.active ? 'filter brightness-0 saturate-100 invert-27 sepia-51 saturate-2878 hue-rotate-202 brightness-104 contrast-97' : ''
-                                                }`}
+                                            className={`w-5 h-5 mr-3 transition-all duration-200 ${isActive(item.to) ? 'filter brightness-0 saturate-100 invert-27 sepia-51 saturate-2878 hue-rotate-202 brightness-104 contrast-97' : ''}`}
                                         />
                                         {!isCollapsed && (
                                             <span className="font-medium">{item.label}</span>
                                         )}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -134,12 +131,12 @@ function Sidebar() {
                         <ul className="space-y-1">
                             {compliance.map((item, index) => (
                                 <li key={index}>
-                                    <a
-                                        href="#"
+                                    <Link
+                                        to={item.to}
                                         className={`
                                             flex items-center px-3 py-2.5 rounded-lg transition-all duration-200 w-full
-                                            ${item.active
-                                                ? 'bg-blue-50 text-blue-700'
+                                            ${isActive(item.to)
+                                                ? 'bg-blue-200 text-blue-700'
                                                 : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
                                             }
                                             group
@@ -148,20 +145,18 @@ function Sidebar() {
                                         <img
                                             src={item.icon}
                                             alt=""
-                                            className={`w-5 h-5 mr-3 transition-all duration-200 ${item.active ? 'filter brightness-0 saturate-100 invert-27 sepia-51 saturate-2878 hue-rotate-202 brightness-104 contrast-97' : ''
-                                                }`}
+                                            className={`w-5 h-5 mr-3 transition-all duration-200 ${isActive(item.to) ? 'filter brightness-0 saturate-100 invert-27 sepia-51 saturate-2878 hue-rotate-202 brightness-104 contrast-97' : ''}`}
                                         />
                                         {!isCollapsed && (
                                             <span className="font-medium">{item.label}</span>
                                         )}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
                 </div>
             </nav>
-
         </div>
     )
 }

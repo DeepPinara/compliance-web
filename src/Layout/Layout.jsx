@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import Header from './Header'
 import Container from './Container'
+import { Outlet } from 'react-router-dom'
 
 function Layout() {
     return (
@@ -11,8 +12,10 @@ function Layout() {
                     <Sidebar />
                 </div>
                 <div className='w-7/8 primary-bg-color'>
-                    <Header />
-                    <Container className='bg-white h-full w-full' />
+                    <Header/>
+                    <div className='bg-white h-9/10'>
+                        <Outlet />
+                    </div>
                 </div>
             </div>
         </div>
