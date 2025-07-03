@@ -1,0 +1,60 @@
+{
+    "menu": [
+        {
+            "section": "Platform Navigation",
+            "items": [
+                {
+                    "label": "Dashboard",
+                    "icon": "/public/Icons/dashboard.svg"
+                },
+                {
+                    "label": "Principle Entity",
+                    "icon": "/public/Icons/building.svg"
+                }
+            ]
+        },
+        {
+            "section": "Tracker",
+            "items": [
+                {
+                    "label": "Tracker",
+                    "icon": "/public/Icons/building.svg"
+                }
+            ]
+        },
+        {
+            "section": "Compliance",
+            "items": [
+                {
+                    "label": "Contractor's",
+                    "icon": "/public/Icons/building.svg"
+                },
+                {
+                    "label": "Worker's",
+                    "icon": "/public/Icons/building.svg"
+                },
+                {
+                    "label": "Wage Master",
+                    "icon": "/public/Icons/building.svg"
+                },
+                {
+                    "label": "Compliances Create",
+                    "icon": "/public/Icons/building.svg"
+                }
+            ]
+        },
+        {
+            "section": "Other",
+            "items": [
+                {
+                    "label": "Team Management",
+                    "icon": "/public/Icons/team.svg"
+                },
+                {
+                    "label": "Minimum Wage Master",
+                    "icon": "/public/Icons/money-bag.svg"
+                }
+            ]
+        }
+    ]
+}

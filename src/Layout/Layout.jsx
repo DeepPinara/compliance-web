@@ -7,10 +7,10 @@ function Layout() {
     return (
         <div>
             <div className="flex w-screen justify-between">
-                <div className='w-1/8 primary-bg-color h-screen'>
+                <div className='w-1/6 primary-bg-color h-screen'>
                     <Sidebar />
                 </div>
-                <div className='w-7/8 primary-bg-color'>
+                <div className='w-5/6 primary-bg-color'>
                     <Header />
                     <Container />
                 </div>
