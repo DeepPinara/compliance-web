@@ -18,15 +18,15 @@ function Menu() {
                             <Link to={item.slug}>
                                 <li
                                     key={idx}
-                                    className={`flex items-center space-x-3 px-3 py-2 rounded-lg cursor-pointer transition-colors duration-150
+                                    className={`flex items-center space-x-3 px-3 py-2 my-2 rounded-lg cursor-pointer transition-colors duration-150
                                 ${isActive(item.label)
-                                            ? 'bg-gray-100 text-blue-600 font-medium'
-                                            : 'text-gray-700 hover:bg-gray-50'}
+                                            ? 'bg-blue-600 text-white font-medium shadow-xl'
+                                            : 'text-black hover:bg-blue-300 hover:text-black hover:shadow-xl'}
                                     `}
                                     onClick={() => setActiveLabel(item.label)}
                                 >
                                     <span className="flex items-center justify-center h-6 w-6">
-                                        <img src={item.icon} alt={item.label + ' icon'} className="h-5 w-5 object-contain" />
+                                        <img src={item.icon} alt={item.label + ' icon'} className={`h-5 w-5 object-contain ${isActive(item.label) ? 'bg-white rounded-full p-1' : 'bg-purple'}`} />
                                     </span>
                                     <span className="flex-1 text-sm">{item.label}</span>
                                 </li>
