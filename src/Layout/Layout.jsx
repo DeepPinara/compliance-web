@@ -1,19 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from './Sidebar'
 import Header from './Header'
-import Container from './Container'
+import { Outlet } from 'react-router';
 
 function Layout() {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const toggleSidebar = () => setSidebarOpen((open) => !open);
+
     return (
-        <div>
-            <div className="flex w-screen justify-between">
-                <div className='w-1/6 primary-bg-color h-screen'>
-                    <Sidebar />
-                </div>
-                <div className='w-5/6 primary-bg-color'>
-                    <Header />
-                    <Container />
-                </div>
+        <div className="min-h-screen flex flex-col md:flex-row w-full">
+            {/* Sidebar: hidden on mobile, visible on md+ */}
+            <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+            <div className="flex-1 flex flex-col">
+                <Header onMenuClick={toggleSidebar} />
+                <Outlet />
             </div>
         </div>
     )
