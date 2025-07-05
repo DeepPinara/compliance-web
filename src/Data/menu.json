@@ -5,11 +5,13 @@
             "items": [
                 {
                     "label": "Dashboard",
-                    "icon": "/Icons/dashboard.svg"
+                    "icon": "/Icons/dashboard.svg",
+                    "slug": "dashboard"
                 },
                 {
                     "label": "Principle Entity",
-                    "icon": "/Icons/building.svg"
+                    "icon": "/Icons/building.svg",
+                    "slug": "principal-entity"
                 }
             ]
         },
@@ -18,7 +20,8 @@
             "items": [
                 {
                     "label": "Tracker",
-                    "icon": "/Icons/building.svg"
+                    "icon": "/Icons/building.svg",
+                    "slug": "create-new-application-tracker"
                 }
             ]
         },
@@ -27,19 +30,23 @@
             "items": [
                 {
                     "label": "Contractor's",
-                    "icon": "/Icons/building.svg"
+                    "icon": "/Icons/building.svg",
+                    "slug": "contractors"
                 },
                 {
                     "label": "Worker's",
-                    "icon": "/Icons/building.svg"
+                    "icon": "/Icons/building.svg",
+                    "slug": "workers"
                 },
                 {
                     "label": "Wage Master",
-                    "icon": "/Icons/building.svg"
+                    "icon": "/Icons/building.svg",
+                    "slug": "wage-master"
                 },
                 {
                     "label": "Compliances Create",
-                    "icon": "/Icons/building.svg"
+                    "icon": "/Icons/building.svg",
+                    "slug": "compliances-create"
                 }
             ]
         },
@@ -48,11 +55,13 @@
             "items": [
                 {
                     "label": "Team Management",
-                    "icon": "/Icons/team.svg"
+                    "icon": "/Icons/team.svg",
+                    "slug": "other"
                 },
                 {
                     "label": "Minimum Wage Master",
-                    "icon": "/Icons/money-bag.svg"
+                    "icon": "/Icons/money-bag.svg",
+                    "slug": "minimum-wage-master"
                 }
             ]
         }
