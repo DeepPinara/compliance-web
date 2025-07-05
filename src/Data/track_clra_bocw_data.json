@@ -1,0 +1,78 @@
+[
+    {
+        "sr": 1,
+        "contractor": {
+            "name": "Name Of contractor",
+            "emailMobile": "Email and Mobile"
+        },
+        "applicationType": "BOCW",
+        "emailOrLink": "Date",
+        "numberOfLabour": 200,
+        "applicationstatus": {
+            "label": "Pending For Doc",
+            "color": "orange"
+        },
+        "paymentstatus": {
+            "label": "Pending",
+            "color": "orange"
+        },
+        "billAmount": "45679/-"
+    },
+    {
+        "sr": 2,
+        "contractor": {
+            "name": "Name Of contractor",
+            "emailMobile": "Email and Mobile"
+        },
+        "applicationType": "BOCW",
+        "emailOrLink": "Date",
+        "numberOfLabour": 200,
+        "applicationstatus": {
+            "label": "Not Yeid",
+            "color": "orange"
+        },
+        "paymentstatus": {
+            "label": "Success Date",
+            "color": "green"
+        },
+        "billAmount": "45679/-"
+    },
+    {
+        "sr": 2,
+        "contractor": {
+            "name": "Name Of contractor",
+            "emailMobile": "Email and Mobile"
+        },
+        "applicationType": "BOCW",
+        "emailOrLink": "Date",
+        "numberOfLabour": 200,
+        "applicationstatus": {
+            "label": "Waiting for Approval",
+            "color": "indigo"
+        },
+        "paymentstatus": {
+            "label": "Success Date",
+            "color": "green"
+        },
+        "billAmount": "45679/-"
+    },
+    {
+        "sr": 2,
+        "contractor": {
+            "name": "Name Of contractor",
+            "emailMobile": "Email and Mobile"
+        },
+        "applicationType": "BOCW",
+        "emailOrLink": "Date",
+        "numberOfLabour": 200,
+        "applicationstatus": {
+            "label": "Approved",
+            "color": "green"
+        },
+        "paymentstatus": {
+            "label": "Success Date",
+            "color": "green"
+        },
+        "billAmount": "45679/-"
+    }
+]
