@@ -1,30 +1,52 @@
 import React, { useState, Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import DocValidationPrev from './Dialogs/DocValidationPrev';
+import MoveContractor from './Dialogs/MoveContractor';
 
 function DocForValidate() {
   const [open, setOpen] = useState(false);
   const [previewImg, setPreviewImg] = useState(null);
+  const [moveDialogOpen, setMoveDialogOpen] = useState(false);
 
-  // Example image URL (replace with your actual image source)
-  const sampleImgUrl = '/public/sample-doc.jpg';
+  // Example images array (replace with your actual image sources)
+  const images = [
+    '/placeholder.jpg',
+    '/placeholder.jpg',
+    '/placeholder.jpg',
+  ];
 
-  const handlePreview = (imgUrl) => {
-    setPreviewImg(imgUrl);
+  // Open DocValidationPrev dialog only (no image preview)
+  const handleOpenDialog = () => {
     setOpen(true);
+    setPreviewImg(null);
+    setMoveDialogOpen(false);
   };
+
+  // Open MoveContractor dialog
+  const handleOpenMoveDialog = () => {
+    setMoveDialogOpen(true);
+    setOpen(false);
+    setPreviewImg(null);
+  };
+
+  // Close all dialogs
+  const handleClose = () => {
+    setOpen(false);
+    setMoveDialogOpen(false);
+    setPreviewImg(null);
+  };
+
+  // Only close image preview, not the whole dialog
+  const handleClosePreview = () => setPreviewImg(null);
 
   return (
     <div className="w-full bg-white p-6 mx-auto">
-      {/* Headless UI Modal */}
+      {/* DocValidationPrev Modal */}
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={setOpen}>
-          <Transition.Child
-            as={Fragment}
-          >
+        <Dialog as="div" className="relative z-10" onClose={handleClose}>
+          <Transition.Child as={Fragment}>
             <div className="fixed inset-0 bg-gray-500 opacity-50" />
           </Transition.Child>
-
           <div className="fixed inset-0 z-10 overflow-y-auto">
             <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
               <Transition.Child
@@ -33,7 +55,34 @@ function DocForValidate() {
                 leave="ease-in duration-200" leaveFrom="opacity-100 translate-y-0 sm:scale-100" leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl">
-                  <DocValidationPrev imgUrl={previewImg} onClose={() => setOpen(false)} />
+                  <DocValidationPrev
+                    onClose={handleClose}
+                    previewImg={previewImg}
+                    onPreview={setPreviewImg}
+                    onClosePreview={handleClosePreview}
+                    images={images}
+                  />
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition.Root>
+      {/* MoveContractor Modal */}
+      <Transition.Root show={moveDialogOpen} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={handleClose}>
+          <Transition.Child as={Fragment}>
+            <div className="fixed inset-0 bg-gray-500 opacity-50" />
+          </Transition.Child>
+          <div className="fixed inset-0 z-10 overflow-y-auto">
+            <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300" enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" enterTo="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200" leaveFrom="opacity-100 translate-y-0 sm:scale-100" leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 ">
+                  <MoveContractor />
                 </Dialog.Panel>
               </Transition.Child>
             </div>
@@ -41,7 +90,6 @@ function DocForValidate() {
         </Dialog>
       </Transition.Root>
       <div className='p-4 shadow-md rounded-lg'>
-
         <h2 className="text-xl font-semibold mb-1">Upload Document By Contractor</h2>
         <p className="text-sm text-gray-500 mb-4">Confirm document and move for application</p>
         <div className="overflow-x-auto">
@@ -82,18 +130,18 @@ function DocForValidate() {
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex gap-2">
-                    <button className="p-1 rounded hover:bg-gray-100 cursor-pointer" onClick={() => handlePreview(sampleImgUrl)}>
-                      <img src="/public/Icons/ic_preview.svg" alt="preview" className='w-6' />
+                    <button className="p-1 rounded hover:bg-gray-100 cursor-pointer" onClick={handleOpenDialog}>
+                      <img src="/Icons/ic_preview.svg" alt="preview" className='w-6' />
                     </button>
-                    <button className="p-1 rounded hover:bg-gray-100 cursor-pointer">
-                      <img src="/public/Icons/ic_return.svg" alt="preview" className='w-6' />
+                    <button className="p-1 rounded hover:bg-gray-100 cursor-pointer" onClick={handleOpenMoveDialog}>
+                      <img src="/Icons/ic_return.svg" alt="preview" className='w-6' />
                     </button>
                   </div>
                 </td>
               </tr>
               {/* Row 2 */}
               <tr>
-                <td className="px-4 py-3">1</td>
+                <td className="px-4 py-3">2</td>
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-3">
                     <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100">
@@ -114,11 +162,11 @@ function DocForValidate() {
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex gap-2">
-                    <button className="p-1 rounded hover:bg-gray-100 cursor-pointer" onClick={() => handlePreview(sampleImgUrl)}>
-                      <img src="/public/Icons/ic_preview.svg" alt="preview" className='w-6' />
+                    <button className="p-1 rounded hover:bg-gray-100 cursor-pointer" onClick={handleOpenDialog}>
+                      <img src="/Icons/ic_preview.svg" alt="preview" className='w-6' />
                     </button>
-                    <button className="p-1 rounded hover:bg-gray-100 cursor-pointer">
-                      <img src="/public/Icons/ic_return.svg" alt="preview" className='w-6' />
+                    <button className="p-1 rounded hover:bg-gray-100 cursor-pointer" onClick={handleOpenMoveDialog}>
+                      <img src="/Icons/ic_return.svg" alt="preview" className='w-6' />
                     </button>
                   </div>
                 </td>
