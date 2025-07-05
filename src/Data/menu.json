@@ -20,8 +20,13 @@
             "items": [
                 {
                     "label": "Tracker",
-                    "icon": "/Icons/building.svg",
+                    "icon": "/Icons/ic_tracker.svg",
                     "slug": "create-new-application-tracker"
+                },
+                {
+                    "label": "Doc for Validate",
+                    "icon": "/Icons/ic_docs.svg",
+                    "slug": "doc-for-validate"
                 }
             ]
         },
@@ -30,22 +35,22 @@
             "items": [
                 {
                     "label": "Contractor's",
-                    "icon": "/Icons/building.svg",
+                    "icon": "/Icons/ic_contractor.svg",
                     "slug": "contractors"
                 },
                 {
                     "label": "Worker's",
-                    "icon": "/Icons/building.svg",
+                    "icon": "/Icons/ic_worker.svg",
                     "slug": "workers"
                 },
                 {
                     "label": "Wage Master",
-                    "icon": "/Icons/building.svg",
+                    "icon": "/Icons/ic_wage_master.svg",
                     "slug": "wage-master"
                 },
                 {
                     "label": "Compliances Create",
-                    "icon": "/Icons/building.svg",
+                    "icon": "/Icons/ic_compliance_create.svg",
                     "slug": "compliances-create"
                 }
             ]
