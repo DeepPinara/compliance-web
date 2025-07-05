@@ -9,87 +9,104 @@ function DocValidationPrev({ onClose }) {
     ];
 
     return (
-        <div className=''>
+        <div className='z-50'>
             <div className="dialog-header flex justify-between items-center">
                 <div className='p-6 flex justify-between items-center w-full border-b-2 pb-4 border-gray-200 '>
                     <div>
-                        <h1 className='text-xl'>Contractor Name</h1>
-                        <h2 className='text-sm'>Email</h2>
-                        <h2 className='text-sm'>Mobile</h2>
+                        <h1 className='text-xl'>Sharma Himnandini</h1>
+                        <h2 className='text-sm'>sharmahimnandini@gmail.com</h2>
+                        <h2 className='text-sm'>+91 1234-567-890</h2>
                     </div>
                     <div className="flex space-x-4">
-                        <button className='px-2 py-1 rounded-xl bg-gray-200'>CLRA NEW</button>
-                        <img src="/public/Icons/ic_close.svg" alt="close" className='w-4 cursor-pointer' onClick={onClose} />
+                        <button className='px-4 py-1 rounded-lg bg-blue-100'>CLRA NEW</button>
+                        <img src="/Icons/ic_close.svg" alt="close" className='w-4 cursor-pointer' onClick={onClose} />
                     </div>
                 </div>
             </div>
             <div className="content p-4 space-y-2 flex flex-col">
-                <label className='bg-gray-200 rounded-xl p-2 w-fit'>Number of Labours: 200</label>
-                <div className="flex space-x-2">
-                    <label className='bg-gray-200 rounded-xl p-2'>IFP ID: 123456789</label>
-                    <label className='bg-gray-200 rounded-xl p-2'>Number of Labours: 200</label>
+                <div className="flex space-x-2 justify-between py-2">
+                    <label className='bg-blue-100 w-1/3 text-center rounded-lg p-2'>Number of Labours: 200</label>
+                    <label className='bg-blue-100 w-1/3 text-center rounded-lg p-2'>IFP ID: 123456789</label>
+                    <label className='bg-blue-100 w-1/3 text-center rounded-lg p-2'>Number of Labours: 200</label>
                 </div>
-                <h1>Form 5</h1>
-                <div className="flex space-x-2">
-                    {images.map((img, idx) => (
-                        <img
-                            key={idx}
-                            src={img}
-                            alt="Placeholder"
-                            className='w-20 h-20 bg-gray-200 p-2 rounded-2xl cursor-pointer object-cover'
-                            onClick={() => setPreviewImg(img)}
-                        />
-                    ))}
+                <div className="flex">
+                    <div className='w-1/2 flex flex-col gap-y-4'>
+                        <div className="form-5">
+                            <h1>Form 5</h1>
+                            <div className="flex space-x-2">
+                                {images.map((img, idx) => (
+                                    <img
+                                        key={idx}
+                                        src={img}
+                                        alt="Placeholder"
+                                        className='w-20 h-20 bg-gray-200 p-2 rounded-2xl cursor-pointer object-cover'
+                                        onClick={() => setPreviewImg(img)}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                        <div className="work-order">
+                            <h1>Work order/LoI-Letter of Intent</h1>
+                            <div className="flex space-x-2">
+                                {images.map((img, idx) => (
+                                    <img
+                                        key={idx}
+                                        src={img}
+                                        alt="Placeholder"
+                                        className='w-20 h-20 bg-gray-200 p-2 rounded-2xl cursor-pointer object-cover'
+                                        onClick={() => setPreviewImg(img)}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                        <div className="security-deposit">
+                            <h1>Security Deposit Chalan</h1>
+                            <div className="flex space-x-2">
+                                {images.map((img, idx) => (
+                                    <img
+                                        key={idx}
+                                        src={img}
+                                        alt="Placeholder"
+                                        className='w-20 h-20 bg-gray-200 p-2 rounded-2xl cursor-pointer object-cover'
+                                        onClick={() => setPreviewImg(img)}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    <div className='w-1/2 flex flex-col gap-y-4'>
+                        <div className="old-license-copy">
+                            <h1>Old License Copy</h1>
+                            <div className="flex space-x-2">
+                                {images.map((img, idx) => (
+                                    <img
+                                        key={idx}
+                                        src={img}
+                                        alt="Placeholder"
+                                        className='w-20 h-20 bg-gray-200 p-2 rounded-2xl cursor-pointer object-cover'
+                                        onClick={() => setPreviewImg(img)}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                        <label className='bg-gray-200 rounded-xl p-2 w-fit'>Last License Number: ***X****</label>
+                        <div className="gst-certificate">
+                            <h1>GST Certificate (3 Pages)</h1>
+                            <div className="flex space-x-2">
+                                {images.map((img, idx) => (
+                                    <img
+                                        key={idx}
+                                        src={img}
+                                        alt="Placeholder"
+                                        className='w-20 h-20 bg-gray-200 p-2 rounded-2xl cursor-pointer object-cover'
+                                        onClick={() => setPreviewImg(img)}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h1>Work order/LoI-Letter of Intent</h1>
-                <div className="flex space-x-2">
-                    {images.map((img, idx) => (
-                        <img
-                            key={idx}
-                            src={img}
-                            alt="Placeholder"
-                            className='w-20 h-20 bg-gray-200 p-2 rounded-2xl cursor-pointer object-cover'
-                            onClick={() => setPreviewImg(img)}
-                        />
-                    ))}
-                </div>
-                <h1>Security Deposit Chalan</h1>
-                <div className="flex space-x-2">
-                    {images.map((img, idx) => (
-                        <img
-                            key={idx}
-                            src={img}
-                            alt="Placeholder"
-                            className='w-20 h-20 bg-gray-200 p-2 rounded-2xl cursor-pointer object-cover'
-                            onClick={() => setPreviewImg(img)}
-                        />
-                    ))}
-                </div>
-                <h1>Old License Copy</h1>
-                <div className="flex space-x-2">
-                    {images.map((img, idx) => (
-                        <img
-                            key={idx}
-                            src={img}
-                            alt="Placeholder"
-                            className='w-20 h-20 bg-gray-200 p-2 rounded-2xl cursor-pointer object-cover'
-                            onClick={() => setPreviewImg(img)}
-                        />
-                    ))}
-                </div>
-                <label className='bg-gray-200 rounded-xl p-2 w-fit'>Last License Number: ***X**** </label>
-                <h1>GST Certificate (3 Pages)</h1>
-                <div className="flex space-x-2">
-                    {images.map((img, idx) => (
-                        <img
-                            key={idx}
-                            src={img}
-                            alt="Placeholder"
-                            className='w-20 h-20 bg-gray-200 p-2 rounded-2xl cursor-pointer object-cover'
-                            onClick={() => setPreviewImg(img)}
-                        />
-                    ))}
-                </div>
+
             </div>
             {/* Preview Overlay */}
             {previewImg && (

@@ -4,7 +4,7 @@ function Header({ onMenuClick }) {
     const [showUserMenu, setShowUserMenu] = useState(false);
 
     return (
-        <header className="sticky top-0 z-30 bg-white/70 backdrop-blur-md shadow-none px-4 py-3 lg:px-6 lg:py-4 transition-all border-b border-b-gray-100">
+        <header className="sticky top-0 z-10 bg-white/70 backdrop-blur-md shadow-none px-4 py-3 lg:px-6 lg:py-4 transition-all border-b border-b-gray-100">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 {/* Left: Hamburger + Title */}
                 <div className="flex items-center gap-2 flex-1 min-w-0">
